@@ -72,7 +72,7 @@ exports.template = function(grunt, init, done) {
         csspreprocessor : 'none',
         tests : false,
         imagemin : false,
-        modules : [],
+        modules : ["route", "resource"],
         thirdModules : []
     };
 
@@ -229,7 +229,9 @@ exports.template = function(grunt, init, done) {
             version: options.version,
             description: options.description,
             dependencies: {
-                "angular": options.angular_version
+                "angular": options.angular_version,
+                "mlg-wms-auth":"git@github.com:MLG/angular-wms-auth.git#*",
+                "mlg-twbs-menu": "git@github.com:MLG/angular-twbs-menu.git#*"
             },
             "devDependencies": {
             }

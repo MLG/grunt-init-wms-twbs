@@ -27,6 +27,8 @@ angular.module('{%= name %}').config(function($stateProvider, $urlRouterProvider
 
 {%if (importedModules.indexOf('ngRoute') !== -1 && importedModules.indexOf('ui.router') === -1) {%}
 angular.module('{%= name %}').config(function ($routeProvider) {
+  "use strict";
+
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',

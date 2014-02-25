@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="{%= name %}">
+<html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="css/app.css"/>
   <!-- endbuild -->
 </head>
-<body>
+<body ng-app="{%= name %}" jm-random-background refresh="900">
   <mlg-twbs-menu app-name="{%= name %}" auth-path="auth" init-path="init"></mlg-twbs-menu>
 
   {%if (importedModules.indexOf('ngRoute') !== -1 || importedModules.indexOf('ui.router') !== -1) {%}

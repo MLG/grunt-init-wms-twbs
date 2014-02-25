@@ -52,6 +52,9 @@ exports.template = function(grunt, init, done) {
     var currentWorkingDirectory = process.cwd().split(path.sep).pop();
     var thirdModuleMapping = {
         "angular-ui-router" : "ui.router",
+        "mlg-wms-auth" : "mlgWmsAuth",
+        "mlg-twbs-menu" : "mlgTWBSMenu",
+        "angular-random-background" : "jm-random-background",
         "angular-translate" : "pascalprecht.translate",
         "revolunet-angular-carousel" : "angular-carousel",
         "angular-snap" : "snap",
@@ -72,8 +75,8 @@ exports.template = function(grunt, init, done) {
         csspreprocessor : 'none',
         tests : false,
         imagemin : false,
-        modules : ["route", "resource","mlgWmsAuth","mlgTWBSMenu"],
-        thirdModules : []
+        modules : ["route", "resource"],
+        thirdModules : ["mlg-wms-auth","mlg-twbs-menu","angular-random-background"]
     };
 
 
@@ -229,8 +232,6 @@ exports.template = function(grunt, init, done) {
             version: options.version,
             description: options.description,
             dependencies: {
-                "mlg-wms-auth":"git@github.com:MLG/angular-wms-auth.git#*",
-                "mlg-twbs-menu": "git@github.com:MLG/angular-twbs-menu.git#*"
             },
             "devDependencies": {
             }
@@ -364,7 +365,7 @@ exports.template = function(grunt, init, done) {
                     type: "checkbox",
                     name: 'thirdModules',
                     message: 'What amazing angular modules do you need ?',
-                    choices: [ "angular-ui-router", "angular-translate", "angular-snap", "revolunet-angular-carousel", "angular-bindonce" ]
+                    choices: ["mlg-wms-auth","mlg-twbs-menu","angular-random-background", "angular-ui-router", "angular-translate", "angular-snap", "revolunet-angular-carousel", "angular-bindonce" ]
                 },
                 {
                     type: "confirm",

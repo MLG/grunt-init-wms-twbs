@@ -219,6 +219,6 @@ module.exports = function(grunt) {
     grunt.registerTask('package', ['jshint', 'clean', 'useminPrepare', 'copy', 'concat', 'ngmin', 'uglify', {% if (csspreprocessor === 'sass') { %}'sass',{% } %} 'cssmin', {% if (revision) { %} 'rev',{% } %} {% if (imagemin === true) { %}'imagemin',{% } %} 'usemin','exec']);
     grunt.registerTask('build', ['jshint', 'clean', 'useminPrepare', 'copy', 'concat', 'ngmin', 'uglify', {% if (csspreprocessor === 'sass') { %}'sass',{% } %} 'cssmin', {% if (revision) { %} 'rev',{% } %} {% if (imagemin === true) { %}'imagemin',{% } %} 'usemin','exec']);
     grunt.registerTask('default', ['package'{%if(tests.unit || tests.e2e){%}, 'connect:test',{% } %} {%if(tests.unit){%}'karma:dist_unit:start',{% } %} {%if(tests.e2e){%} 'karma:e2e'{% } %} {% if (complexity) { %} ,'plato'{% } %}]);
-
+    grunt.loadNpmTasks('grunt-exec');
 
 };

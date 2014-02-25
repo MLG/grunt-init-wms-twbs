@@ -53,6 +53,12 @@ module.exports = function(grunt) {
         usemin: {
             html: '<%= distDir %>/index.html'
         },
+        exec: {
+            gitAdd: {
+              command: 'git add . --all',
+              cwd: '<%= yeoman.dist %>'
+            }
+        },
         browser_sync: {
             dev: {
                 bsFiles: {
@@ -210,7 +216,8 @@ module.exports = function(grunt) {
     {% if (tests.unit) { %}grunt.registerTask('test:unit', ['karma:dist_unit:start']);{% } %}
     {% if (complexity) { %}grunt.registerTask('report', ['plato', 'connect:plato']);{% } %}
     grunt.registerTask('dev', [{% if (csspreprocessor === 'sass') { %}'sass',{% } %}'browser_sync', {% if (tests.unit) { %}  'karma:dev_unit:start',  {% } %} 'watch']);
-    grunt.registerTask('package', ['jshint', 'clean', 'useminPrepare', 'copy', 'concat', 'ngmin', 'uglify', {% if (csspreprocessor === 'sass') { %}'sass',{% } %} 'cssmin', {% if (revision) { %} 'rev',{% } %} {% if (imagemin === true) { %}'imagemin',{% } %} 'usemin']);
+    grunt.registerTask('package', ['jshint', 'clean', 'useminPrepare', 'copy', 'concat', 'ngmin', 'uglify', {% if (csspreprocessor === 'sass') { %}'sass',{% } %} 'cssmin', {% if (revision) { %} 'rev',{% } %} {% if (imagemin === true) { %}'imagemin',{% } %} 'usemin','exec']);
+    grunt.registerTask('build', ['jshint', 'clean', 'useminPrepare', 'copy', 'concat', 'ngmin', 'uglify', {% if (csspreprocessor === 'sass') { %}'sass',{% } %} 'cssmin', {% if (revision) { %} 'rev',{% } %} {% if (imagemin === true) { %}'imagemin',{% } %} 'usemin','exec']);
     grunt.registerTask('default', ['package'{%if(tests.unit || tests.e2e){%}, 'connect:test',{% } %} {%if(tests.unit){%}'karma:dist_unit:start',{% } %} {%if(tests.e2e){%} 'karma:e2e'{% } %} {% if (complexity) { %} ,'plato'{% } %}]);
 
 

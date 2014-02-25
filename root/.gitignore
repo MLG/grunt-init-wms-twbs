@@ -1,7 +1,5 @@
 node_modules
 .tmp
-dist
-app/vendor
 .tmp/
 .idea
 *.iml

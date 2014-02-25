@@ -1,0 +1,24 @@
+<div class="container" ng-init="init()">
+  <div class="col-xs-12">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="">{{appName}}</a>
+      </div>
+
+      <div class="collapse navbar-collapse navbar-ex1-collapse" ng-cloak>
+        <!--<ul class="nav navbar-nav">-->
+        <!--<li ng-class="{'active':tab=='item'}"><a href="" ng-click="setTab('item')">Menu Item</a></li>-->
+        <!--</ul>-->
+        <ul class="nav navbar-nav navbar-right" ng-show="Auth.session.user_name">
+          <li><a href="/?logout=1">{{ Auth.session.user_name }} <span class="glyphicon glyphicon-log-out"></span></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>

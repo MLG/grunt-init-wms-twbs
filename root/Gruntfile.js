@@ -56,7 +56,7 @@ module.exports = function(grunt) {
         exec: {
             gitAdd: {
               command: 'git add . --all',
-              cwd: '<%= yeoman.dist %>'
+              cwd: '<%= distDir %>'
             }
         },
         browser_sync: {

@@ -229,7 +229,6 @@ exports.template = function(grunt, init, done) {
             version: options.version,
             description: options.description,
             dependencies: {
-                "angular": options.angular_version,
                 "mlg-wms-auth":"git@github.com:MLG/angular-wms-auth.git#*",
                 "mlg-twbs-menu": "git@github.com:MLG/angular-twbs-menu.git#*"
             },
@@ -241,13 +240,13 @@ exports.template = function(grunt, init, done) {
             bowerContent.devDependencies['angular-mocks'] = options.angular_version;
         }
 
-        if(options.modules){
-            options.modules.map(function(module){
-                if (options.modules.indexOf(module) !== -1) {
-                    bowerContent.dependencies['angular-' + module] = options.angular_version;
-                }
-            });
-        }
+//        if(options.modules){
+//            options.modules.map(function(module){
+//                if (options.modules.indexOf(module) !== -1) {
+//                    bowerContent.dependencies['angular-' + module] = options.angular_version;
+//                }
+//            });
+//        }
 
         if(options.thirdModules){
             options.thirdModules.map(function(module){

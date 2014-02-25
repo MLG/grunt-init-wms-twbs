@@ -72,7 +72,7 @@ exports.template = function(grunt, init, done) {
         csspreprocessor : 'none',
         tests : false,
         imagemin : false,
-        modules : ["route", "resource"],
+        modules : ["route", "resource","mlgWmsAuth","mlgTWBSMenu"],
         thirdModules : []
     };
 

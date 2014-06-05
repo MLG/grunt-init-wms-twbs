@@ -386,7 +386,7 @@ exports.template = function(grunt, init, done) {
                     type: "confirm",
                     name: "revision",
                     message: "Rename JS & CSS files for browser caching purpose ?  (i.e. app.js becomes 8664d46sf64.app.js)",
-                    default: false
+                    default: true
                 },
                 {
                     type: "confirm",
